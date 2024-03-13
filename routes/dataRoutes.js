@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const addController = require('../controllers/addController')
-
+const fetchController = require('../controllers/fetchController')
+const editController = require('../controllers/editController')
+const getItemController = require('../controllers/getItemController')
 router.post('/add', addController)
-// router.post('/get', loginController)
-// router.post('/edit', loginController)
+router.post('/get', fetchController)
+router.post('/edit', editController)
+router.post('/getItem', getItemController)
 // router.post('/delete', loginController)
 module.exports = router

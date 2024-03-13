@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
 
-const fetchController = async (req,res) =>{
+const getItemController = async (req,res) =>{
     try{
-        const data = await mongoose.model('expense').find({})
+        const data = await mongoose.model('expense').find({_id: req.body.id})
         res.status(200).json(data)
     }
     catch(e){
@@ -13,4 +13,4 @@ const fetchController = async (req,res) =>{
     }
 }
 
-module.exports = fetchController
+module.exports = getItemController
